@@ -6,10 +6,15 @@ use std::thread;
 fn main() {
     let mut collection = vec![4, 5, 2, 8, 6, 1, 3, 9, 7];
 
-    println!("{:?}", quicksort(collection));
+    let mut rand_collection: Vec<u32> = vec!();
+    for _ in 0..100000 {    
+        rand_collection.push(rand::random());
+    }
+
+    println!("{:?}", quicksort(rand_collection));
 }
 
-fn quicksort(mut collection_to_sort: Vec<u8>) -> Vec<u8> {
+fn quicksort(mut collection_to_sort: Vec<u32>) -> Vec<u32> {
     if collection_to_sort.len() < 2 {
         return collection_to_sort;
     }
